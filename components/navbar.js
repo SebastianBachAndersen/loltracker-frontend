@@ -13,7 +13,7 @@ export default function navbar({ children }) {
           </a>
         </li>
         <li className="relative py-4">
-          <a className="flex items-center text-sm py-4 px-6 h-16 overflow-hidden text-gray-50 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-500 transition duration-300 ease-in-out text-center" href="search">
+          <a className="flex items-center text-sm py-4 px-6 h-16 overflow-hidden text-gray-50 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-500 transition duration-300 ease-in-out text-center" href="/">
           <img className="ml-4" src="https://img.icons8.com/material-rounded/48/ffffff/search.png"/>
           </a>
         </li>
