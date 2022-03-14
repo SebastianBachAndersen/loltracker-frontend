@@ -1,6 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import Selectr from "../components/selectRegion"
+import Search from "../images/icons/search";
+
+const search = ({}) => {
+  return "https://img.icons8.com/material-rounded/24/ffffff/search.png"
+}
+
 
 export default function Home() {
   return (
@@ -21,9 +27,9 @@ export default function Home() {
         ></input>
         <button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded"
         >
-          <img src="https://img.icons8.com/material-rounded/24/ffffff/search.png" />
+        <Search width={50} height={30}/>
         </button>
       </div>
     </div>

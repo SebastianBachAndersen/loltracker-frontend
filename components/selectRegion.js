@@ -1,4 +1,4 @@
-export default function navbar({ children }) {
+export default function selectRegion({ children }) {
   return (
     <select className="bg-primary rounded-lg h-10 text-xl ml-0.5">
       <option value="br" >br</option>
