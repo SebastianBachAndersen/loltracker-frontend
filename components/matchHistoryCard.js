@@ -7,7 +7,7 @@ export default function MatchHistoryCard({ className }) {
       <div className="bg-secondary w-full rounded-md">
         <div className="bg-secondary grid grid-cols-5 text-xs items-center text-center lg:px-5">
           <div className="grid grid-rows-2 justify-center gap-5  ">
-            <div className="">
+            <div>
               <p>Ranked Solo</p>
               <p>2 Days ago</p>
             </div>
@@ -18,7 +18,7 @@ export default function MatchHistoryCard({ className }) {
           </div>
           <div>
             <div className="p-1 flex gap-2">
-              <div className="">
+              <div>
                 <Image
                   className="rounded-full mx-auto border-solid border-2 border-white"
                   width={100}
