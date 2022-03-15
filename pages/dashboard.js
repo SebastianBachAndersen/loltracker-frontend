@@ -16,7 +16,7 @@ export default function Dashboard() {
             <h1 className="text-xl">-Summener Name-</h1>
           </div>
           <div >
-            <UserSearch selectRegion={"ml-44"} searchButton={"ml-32"} />
+            <UserSearch selectRegion={"ml-44"} inputInder={"bg-primary rounded-lg w-96 h-10 text-xl text-slate-50 p-4"} searchButtonOuter={"ml-32 mt-0.5"} searchButtonInder={"bg-blue-500 hover:bg-blue-700 px-1 py-1 text-white font-bold  rounded"} />
           </div>
         </div>
 
