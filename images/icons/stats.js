@@ -1,5 +1,5 @@
 export default function stats({ width, height, fill = "white" }) {
-  return (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" width={width} height={height} fill={fill} enable-background="new 0 0 129 129">
+  return (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" width={width} height={height} fill={fill}>
   <g>
     <g>
       <path d="M118.4,114.4H14.6V10.6c0-2.3-1.8-4.1-4.1-4.1s-4.1,1.8-4.1,4.1v107.9c0,2.3,1.8,4.1,4.1,4.1h107.9c2.3,0,4.1-1.8,4.1-4.1    S120.7,114.4,118.4,114.4z"/>
