@@ -12,7 +12,8 @@ module.exports = {
         secondary: {
           DEFAULT: "#373C3D"
         }
-      }
+      },
+    
     }
   },
   plugins: []

@@ -2,7 +2,7 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="bg-secondary  h-screen text-white">
+    <div className="bg-secondary  min-h-screen text-white">
       <Component {...pageProps} />
     </div>
   );
