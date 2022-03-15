@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Selectr from "../components/selectRegion";
-import Search from "../images/icons/search";
+import UserSearch from "../components/userSearch";
 
 export default function Home() {
   return (
@@ -12,28 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="m-auto">
-        <div className="grid grid-cols-3">
-          <div className="ml-80">
-            <Selectr />
-          </div>
-          <div>
-            <input
-              className="bg-primary rounded-lg w-96 h-10 text-xl text-slate-50 p-4"
-              type="search"
-              name="search"
-              id="search"
-              placeholder="Search"
-            ></input>
-          </div>
-          <div className="mt-0.5">
-            <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-700 px-1 py-1 text-white font-bold  rounded"
-            >
-              <Search width={50} height={30} />
-            </button>
-          </div>
-        </div>
+        <UserSearch overall={"grid grid-cols-3"} selectRegion={"ml-80"} searchButton={"mt-0.5"} />
       </div>
     </div>
   );

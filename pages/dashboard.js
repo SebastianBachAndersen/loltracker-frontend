@@ -13,8 +13,8 @@ export default function Dashboard() {
           <div>
             <h1 className="text-xl">-Summener Name-</h1>
           </div>
-          <div>
-            <UserSearch/>
+          <div >
+            <UserSearch selectRegion={"ml-44"} searchButton={"ml-32"} />
           </div>
         </div>
 
