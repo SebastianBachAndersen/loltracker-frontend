@@ -12,11 +12,10 @@ export default function Dashboard() {
   const [matchHistory, setMatchHistory] = useState([]);
 
   const [dataFetched, setDataFetched] = useState(false);
-
   useEffect(() => {
     if (dataFetched == true) return;
     axios
-      .get("http://127.0.0.1:8000/api/summoner/euw/sex%20med%20mænd")
+      .get(process.env.BASE_API_URL + "summoner/euw/sex%20med%20mænd")
       .then((response) => {
         setResponse(response);
         setSummoner(response.data.summoner);
@@ -42,12 +41,14 @@ export default function Dashboard() {
         </div>
 
         <div className="grid grid-cols-4 gap-5">
-          <div className="grid grid-rows-2 gap-5">
-            <div className="bg-primary rounded-md">
-              <LpGraf />
-            </div>
-            <div className="bg-primary rounded-md">
-              <FaveChampList />
+          <div>
+            <div className="grid grid-rows-2 gap-5">
+              <div className="bg-primary rounded-md">
+                <LpGraf />
+              </div>
+              <div className="bg-primary rounded-md">
+                <FaveChampList />
+              </div>
             </div>
           </div>
           <div className="bg-primary  col-span-3 rounded-md">
