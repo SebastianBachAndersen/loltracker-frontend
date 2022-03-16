@@ -1,7 +1,7 @@
-export default function selectRegion({ children }) {
+export default function selectRegion({ value, onChange }) {
   return (
-    <select className="bg-primary rounded-lg h-10 text-xl ml-0.5">
-      <option value="br" >br</option>
+    <select className="bg-primary rounded-lg h-10 text-xl ml-0.5" name="serve" id="serve" value={value} onChange={(e) => onChange(e.target.value)}>
+      <option value="br">br</option>
       <option value="eune">eune</option>
       <option value="lan">lan</option>
       <option value="las">las</option>
