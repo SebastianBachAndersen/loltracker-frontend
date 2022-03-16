@@ -4,11 +4,14 @@ import moment from "moment";
 import Link from "next/link";
 
 export default function MatchHistoryCard({ className, match, summoner }) {
-  console.log(match.details.info.participants);
-  // console.log(summoner);
+  console.log("here----");
+  console.log(summoner);
+  console.log("here----end");
+
   let playerMatchID = match.details.metadata.participants.indexOf(
     summoner.puuid
   );
+
   let currentUserObj = match.details.info.participants[playerMatchID];
   return (
     <div className="p-4">
@@ -21,10 +24,10 @@ export default function MatchHistoryCard({ className, match, summoner }) {
             </div>
             <div
               className={`${
-                currentUserObj.win ? "text-green-600" : "text-red-600"
+                currentUserObj?.win ?? false ? "text-green-600" : "text-red-600"
               }`}
             >
-              <p>{currentUserObj.win ? "Win" : "Lose"}</p>
+              <p>{currentUserObj.win ?? false ? "Win" : "Lose"}</p>
               <p>
                 {moment
                   .utc(match.details.info.gameDuration * 1000)
@@ -80,7 +83,7 @@ export default function MatchHistoryCard({ className, match, summoner }) {
             {match.details.info.participants.map(function (player, i) {
               return (
                 <div key={i}>
-                  <Link href={`/euw/${player.summonerName}`} passHref>
+                  <Link href={`/dashboard/euw/${player.summonerName}`} passHref>
                     <div className="flex gap-2 text-left">
                       <div>
                         <Image
