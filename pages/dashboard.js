@@ -3,9 +3,30 @@ import UserSearch from "../components/userSearch";
 import LpGraf from "../components/lpGraf";
 import FaveChampList from "../components/faveCampList";
 import MatchHistoryList from "../components/matchHistroyList";
+import axios from "axios";
+import { useState, useEffect } from "react/cjs/react.development";
+
 export default function Dashboard() {
+  const [response, setResponse] = useState("");
+  const [summoner, setSummoner] = useState([]);
+  const [matchHistory, setMatchHistory] = useState([]);
+
+  const [dataFetched, setDataFetched] = useState(false);
+
+  useEffect(() => {
+    if (dataFetched == true) return;
+    axios
+      .get("http://127.0.0.1:8000/api/summoner/euw/sex%20med%20mænd")
+      .then((response) => {
+        setResponse(response);
+        setSummoner(response.data.summoner);
+        setMatchHistory(response.data.matchHistory);
+        setDataFetched(true);
+      });
+  }, [dataFetched]);
+
   return (
-    <div className=" ">
+    <div>
       <Head>
         <title>PLACEHOLDER - league tracker </title>
         <link rel="icon" href="/favicon.ico" />
@@ -13,7 +34,7 @@ export default function Dashboard() {
       <div className="container mx-auto">
         <div className="grid grid-cols-2 p-5">
           <div>
-            <h1 className="text-xl">-Summener Name-</h1>
+            <h1 className="text-xl">{summoner?.name ?? ""}</h1>
           </div>
           <div>
             <UserSearch />
@@ -30,7 +51,7 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="bg-primary  col-span-3 rounded-md">
-            <MatchHistoryList />
+            <MatchHistoryList matchHistory={matchHistory} summoner={summoner} />
           </div>
         </div>
       </div>
