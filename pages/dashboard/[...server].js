@@ -77,6 +77,7 @@ export default function Dashboard() {
               <MatchHistoryList
                 matchHistory={matchHistory}
                 summoner={summoner}
+                server={server[0]}
               />
             </div>
           </div>
