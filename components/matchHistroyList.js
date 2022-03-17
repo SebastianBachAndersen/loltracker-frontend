@@ -7,6 +7,7 @@ export default function MatchHistroyList({
   summoner,
   server
 }) {
+  console.log(matchHistory);
   return (
     <div className="p-4">
       <h2 className="text-center">-match histroy list-</h2>
