@@ -4,7 +4,7 @@ import HomeIcon from "../images/icons/home";
 import Search from "../images/icons/search";
 import Stats from "../images/icons/stats";
 
-export default function sidebar({ children }) {
+export default function Sidebar({ children }) {
   return (
     <div className="w-40 min-h-screen shadow-md px-1 fixed bg-primary">
       <ul className="relative">

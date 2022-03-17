@@ -4,7 +4,7 @@ import Search from "../images/icons/search";
 import { useRouter } from "next/router";
 import { useState } from "react/cjs/react.development";
 
-export default function userSearch({
+export default function UserSearch({
   selectRegion,
   inputOuter,
   inputInder,
