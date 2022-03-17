@@ -2,7 +2,7 @@ import React from "react";
 import SelectRegion from "./selectRegion";
 import Search from "../images/icons/search";
 import { useRouter } from "next/router";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
 export default function UserSearch({
   selectRegion,

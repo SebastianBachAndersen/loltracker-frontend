@@ -4,7 +4,7 @@ import LpGraf from "../../components/lpGraf";
 import FaveChampList from "../../components/faveCampList";
 import MatchHistoryList from "../../components/matchHistroyList";
 import axios from "axios";
-import { useState, useEffect, useRef } from "react/cjs/react.development";
+import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 
 export default function Dashboard() {
