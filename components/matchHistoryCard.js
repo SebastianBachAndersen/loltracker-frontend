@@ -9,10 +9,6 @@ export default function MatchHistoryCard({
   summoner,
   server
 }) {
-  console.log("here----");
-  console.log(summoner);
-  console.log("here----end");
-
   let playerMatchID = match.details.metadata.participants.indexOf(
     summoner.puuid
   );
