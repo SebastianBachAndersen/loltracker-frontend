@@ -72,7 +72,7 @@ export default function MatchHistoryCard({ className, match, summoner }) {
               <div>Cs {currentUserObj.totalMinionsKilled}</div>
             </div>
             <div className="grid grid-rows-2 justify-center gap-5">
-              <div>kda {currentUserObj.challenges.kda}</div>
+              <div>kda {Number(currentUserObj.challenges?.kda.toFixed(2))}</div>
               <div>
                 {currentUserObj.kills} / {currentUserObj.deaths} /
                 {currentUserObj.assists}
@@ -82,7 +82,7 @@ export default function MatchHistoryCard({ className, match, summoner }) {
           <div className="grid grid-rows-5 grid-flow-col">
             {match.details.info.participants.map(function (player, i) {
               return (
-                <div key={i}>
+                <div key={i} className="cursor-pointer">
                   <Link href={`/dashboard/euw/${player.summonerName}`} passHref>
                     <div className="flex gap-2 text-left">
                       <div>

@@ -12,7 +12,7 @@ export default function userSearch({
   searchButtonInder
 }) {
   const [search, setSearch] = useState("");
-  const [server, setServer] = useState("br");
+  const [server, setServer] = useState("euw");
   const router = useRouter();
   const handlingSearch = (e) => {
     e.preventDefault();
