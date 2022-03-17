@@ -1,6 +1,6 @@
 import React from "react";
 import SelectRegion from "./selectRegion";
-import Search from "../images/icons/search";
+import Search from "../assets/images/icons/search";
 import { useRouter } from "next/router";
 import { useState } from "react";
 

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import HomeIcon from "../images/icons/home";
-import Search from "../images/icons/search";
-import Stats from "../images/icons/stats";
+import HomeIcon from "../assets/images/icons/home";
+import Search from "../assets/images/icons/search";
+import Stats from "../assets/images/icons/stats";
 
 export default function Sidebar({ children }) {
   return (

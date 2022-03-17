@@ -1,0 +1,98 @@
+{
+  "1": {
+    "id": 1,
+    "key": "SummonerBoost",
+    "name": "Cleanse",
+    "description": "Removes all disables (excluding suppression and airborne) and summoner spell debuffs affecting your champion and lowers the duration of incoming disables by 65% for 3 seconds."
+  },
+  "3": {
+    "id": 3,
+    "key": "SummonerExhaust",
+    "name": "Exhaust",
+    "description": "Exhausts target enemy champion, reducing their Move Speed by 30%, and their damage dealt by 40% for 3 seconds."
+  },
+  "4": {
+    "id": 4,
+    "key": "SummonerFlash",
+    "name": "Flash",
+    "description": "Teleports your champion a short distance toward your cursor's location."
+  },
+  "6": {
+    "id": 6,
+    "key": "SummonerHaste",
+    "name": "Ghost",
+    "description": "For 10 seconds, your champion can move through units and gains 24 - 48% Move Speed (depending on champion level). Ghost extends its duration on takedown."
+  },
+  "7": {
+    "id": 7,
+    "key": "SummonerHeal",
+    "name": "Heal",
+    "description": "Restores 90-345 Health (depending on champion level) and grants 30% Move Speed for 1 second to you and target allied champion. This healing is halved for units recently affected by Summoner Heal."
+  },
+  "11": {
+    "id": 11,
+    "key": "SummonerSmite",
+    "name": "Smite",
+    "description": "Deals 450 true damage to target epic, large, or medium monster or minion. Holds two charges (90s Recharge Time)"
+  },
+  "12": {
+    "id": 12,
+    "key": "SummonerTeleport",
+    "name": "Teleport",
+    "description": "After channeling for 4 seconds, teleports your champion to target allied structure. Upgrades to Unleashed Teleport at 14 minutes, which teleports your champion to target allied structure, minion, or ward."
+  },
+  "13": {
+    "id": 13,
+    "key": "SummonerMana",
+    "name": "Clarity",
+    "description": "Restores 50% of your champion's maximum Mana. Also restores allies for 25% of their maximum Mana."
+  },
+  "14": {
+    "id": 14,
+    "key": "SummonerDot",
+    "name": "Ignite",
+    "description": "Ignites target enemy champion, dealing 70-410 true damage (depending on champion level) over 5 seconds, grants you vision of the target, and reduces healing effects on them for the duration."
+  },
+  "21": {
+    "id": 21,
+    "key": "SummonerBarrier",
+    "name": "Barrier",
+    "description": "Shields your champion from 115-455 damage (depending on champion level) for 2 seconds."
+  },
+  "30": {
+    "id": 30,
+    "key": "SummonerPoroRecall",
+    "name": "To the King!",
+    "description": "Quickly travel to the Poro King's side."
+  },
+  "31": {
+    "id": 31,
+    "key": "SummonerPoroThrow",
+    "name": "Poro Toss",
+    "description": "Toss a Poro at your enemies. If it hits, you can quickly travel to your target as a follow up."
+  },
+  "32": {
+    "id": 32,
+    "key": "SummonerSnowball",
+    "name": "Mark",
+    "description": "Throw a snowball in a straight line at your enemies. If it hits an enemy, they become marked, granting True Sight, and your champion can quickly travel to the marked target as a follow up."
+  },
+  "39": {
+    "id": 39,
+    "key": "SummonerSnowURFSnowball_Mark",
+    "name": "Mark",
+    "description": "Throw a snowball in a straight line at your enemies. If it hits an enemy, they become marked, granting True Sight, and your champion can quickly travel to the marked target as a follow up."
+  },
+  "54": {
+    "id": 54,
+    "key": "Summoner_UltBookPlaceholder",
+    "name": "Placeholder",
+    "description": "This slot will be replaced by another champion's ultimate selected at the start of the game. There will be 30 seconds to select an ultimate. Be prepared!"
+  },
+  "55": {
+    "id": 55,
+    "key": "Summoner_UltBookSmitePlaceholder",
+    "name": "Placeholder and Attack-Smite",
+    "description": "This slot will be replaced by another champion's ultimate and you will gain Attack-Smite. There will be 30 seconds to select an ultimate. Be prepared!"
+  }
+}
