@@ -4,14 +4,22 @@ import MatchHistoryCard from "./matchHistoryCard";
 export default function MatchHistroyList({
   className,
   matchHistory,
-  summoner
+  summoner,
+  server
 }) {
   return (
     <div className="p-4">
       <h2 className="text-center">-match histroy list-</h2>
       <div>
         {matchHistory.map(function (match, i) {
-          return <MatchHistoryCard key={i} match={match} summoner={summoner} />;
+          return (
+            <MatchHistoryCard
+              key={i}
+              match={match}
+              summoner={summoner}
+              server={server}
+            />
+          );
         })}
       </div>
     </div>

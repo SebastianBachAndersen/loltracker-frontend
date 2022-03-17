@@ -3,7 +3,12 @@ import Image from "next/image";
 import moment from "moment";
 import Link from "next/link";
 
-export default function MatchHistoryCard({ className, match, summoner }) {
+export default function MatchHistoryCard({
+  className,
+  match,
+  summoner,
+  server
+}) {
   console.log("here----");
   console.log(summoner);
   console.log("here----end");
@@ -83,7 +88,10 @@ export default function MatchHistoryCard({ className, match, summoner }) {
             {match.details.info.participants.map(function (player, i) {
               return (
                 <div key={i} className="cursor-pointer">
-                  <Link href={`/dashboard/euw/${player.summonerName}`} passHref>
+                  <Link
+                    href={`/dashboard/${server}/${player.summonerName}`}
+                    passHref
+                  >
                     <div className="flex gap-2 text-left">
                       <div>
                         <Image
