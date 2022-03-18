@@ -43,26 +43,23 @@ export default function Dashboard() {
       {error ? (
         <p className="text-red-600"></p>
       ) : serverRef.current === server ? (
-        <div className="container mx-auto">
-          <div className="grid grid-cols-2 p-5">
-            <div>
-              <h1 className="text-xl">{summoner?.name ?? ""}</h1>
-            </div>
-            <div>
+        <div className="container px-5 mx-auto">
+          <div className="grid grid-cols-1 py-4 lg:grid-cols-3">
+            <h1 className="text-xl">{summoner?.name ?? ""}</h1>
+            <div className="col-span-2 ">
               <UserSearch
-                selectRegion={"ml-44"}
-                inputInder={
-                  "bg-primary rounded-lg w-96 h-10 text-xl text-slate-50 p-4"
-                }
-                searchButtonOuter={"ml-32 mt-0.5"}
+                selectRegion={""}
+                inputInder={"bg-primary rounded-lg h-10 text-xl p-4"}
+                searchButtonOuter={" "}
                 searchButtonInder={
                   "bg-blue-500 hover:bg-blue-700 px-1 py-1 text-white font-bold  rounded"
                 }
+                className={"flex flex-row justify-end"}
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
             <div>
               <div className="grid grid-rows-2 gap-5">
                 <div className="bg-primary rounded-md">
@@ -73,7 +70,7 @@ export default function Dashboard() {
                 </div>
               </div>
             </div>
-            <div className="bg-primary  col-span-3 rounded-md">
+            <div className="bg-primary lg:col-span-3 rounded-md">
               <MatchHistoryList
                 matchHistory={matchHistory}
                 summoner={summoner}
@@ -84,10 +81,11 @@ export default function Dashboard() {
         </div>
       ) : (
         <div className=" flex justify-center items-center">
-          <p className="mx-auto">loading......</p>
+          <p className="mx-auto">
+            JEG ARBEJDER LIGESOM!!!!!! 😡😡😠😠😡😠😡😡😠😡😠!!!!
+          </p>
         </div>
       )}
-      z
     </div>
   );
 }
