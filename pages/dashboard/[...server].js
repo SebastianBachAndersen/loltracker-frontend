@@ -11,8 +11,9 @@ import Meta from "../../components/meta";
 export async function getServerSideProps(context) {
   // Fetch data from external API
   const { server } = context.query;
+  console.log(process.env.BACKEND_API_URL);
   const res = await fetch(
-    process.env.BASE_API_URL + `summoner/${server[0]}/${server[1]}`
+    process.env.BACKEND_API_URL + `summoner/${server[0]}/${server[1]}`
   );
   const data = await res.json();
   data.server = server[0];
