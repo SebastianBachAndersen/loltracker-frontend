@@ -3,16 +3,19 @@ import UserSearch from "../../components/userSearch";
 import LpGraf from "../../components/lpGraf";
 import FaveChampList from "../../components/faveCampList";
 import MatchHistoryList from "../../components/matchHistroyList";
-import axios from "axios";
-import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/router";
 import Meta from "../../components/meta";
 
 export async function getServerSideProps(context) {
   // Fetch data from external API
   const { server } = context.query;
   const res = await fetch(
-    process.env.BACKEND_API_URL + `summoner/${server[0]}/${server[1]}`
+    process.env.BACKEND_API_URL + `summoner/${server[0]}/${server[1]}`,
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.BACKEND_API_KEY}`
+      }
+    }
   );
   const data = await res.json();
   data.server = server[0];
