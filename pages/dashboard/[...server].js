@@ -20,10 +20,19 @@ export async function getServerSideProps(context) {
   const data = await res.json();
   data.server = server[0];
   // Pass data to the page via props
+  if (data.error) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/dashboard/notfound"
+      }
+    };
+  }
   return { props: { data } };
 }
 
 function Dashboard({ data }) {
+  console.log(data);
   return (
     <div>
       <Meta
