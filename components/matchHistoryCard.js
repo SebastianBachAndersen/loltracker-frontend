@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import moment from "moment";
 import Link from "next/link";
+import summonerSpells from "../assets/staticData/summonerSpells.json";
 
 export default function MatchHistoryCard({
   className,
@@ -12,7 +13,6 @@ export default function MatchHistoryCard({
   let playerMatchID = match.details.metadata.participants.indexOf(
     summoner.puuid
   );
-
   let currentUserObj = match.details.info.participants[playerMatchID];
   return (
     <div className="p-4">
@@ -53,7 +53,9 @@ export default function MatchHistoryCard({
                   width={30}
                   height={30}
                   layout="fixed"
-                  src="http://ddragon.leagueoflegends.com/cdn/12.5.1/img/spell/SummonerFlash.png"
+                  src={`http://ddragon.leagueoflegends.com/cdn/12.5.1/img/spell/${
+                    summonerSpells[currentUserObj.summoner1Id].key
+                  }.png`}
                   alt="placeholder"
                 />
                 <Image
@@ -61,7 +63,9 @@ export default function MatchHistoryCard({
                   width={30}
                   height={30}
                   layout="fixed"
-                  src="http://ddragon.leagueoflegends.com/cdn/12.5.1/img/spell/SummonerBarrier.png"
+                  src={`http://ddragon.leagueoflegends.com/cdn/12.5.1/img/spell/${
+                    summonerSpells[currentUserObj.summoner2Id].key
+                  }.png`}
                   alt="placeholder"
                 />
               </div>
