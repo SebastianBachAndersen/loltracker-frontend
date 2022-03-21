@@ -22,13 +22,9 @@ module.exports = {
           DEFAULT: "#373C3D"
         }
       },
-<<<<<<< Updated upstream
       transitionProperty: {
         width: "width"
       }
-=======
-    
->>>>>>> Stashed changes
     }
   },
   plugins: []

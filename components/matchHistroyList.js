@@ -11,7 +11,6 @@ export default function MatchHistroyList({
     <div className="p-4">
       <h2 className="text-center">-match histroy list-</h2>
       <div>
-<<<<<<< Updated upstream
         {matchHistory.map(function (match, i) {
           return (
             <MatchHistoryCard
@@ -22,9 +21,6 @@ export default function MatchHistroyList({
             />
           );
         })}
-=======
-        <MatchHistoryCard />
->>>>>>> Stashed changes
       </div>
     </div>
   );
