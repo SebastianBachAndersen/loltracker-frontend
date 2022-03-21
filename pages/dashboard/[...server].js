@@ -48,6 +48,7 @@ function Dashboard({ data }) {
             <UserSearch
               selectRegion={""}
               inputInder={"bg-Darkgray rounded-lg h-10 text-xl p-4"}
+
               searchButtonOuter={" "}
               searchButtonInder={
                 "bg-Darkblue hover:bg-Hower px-1 py-1 text-white font-bold  rounded"
@@ -65,6 +66,7 @@ function Dashboard({ data }) {
               <LpGraf />
             </div>
             <div className="bg-Darkgray rounded-md">
+
               <FaveChampList />
             </div>
           </div>
