@@ -52,11 +52,11 @@ export default function Dashboard() {
               <UserSearch
                 selectRegion={"ml-44"}
                 inputInder={
-                  "bg-primary rounded-lg w-96 h-10 text-xl text-slate-50 p-4"
+                  "bg-Lightgray rounded-lg w-96 h-10 text-xl text-slate-50 p-4"
                 }
                 searchButtonOuter={"ml-32 mt-0.5"}
                 searchButtonInder={
-                  "bg-blue-500 hover:bg-blue-700 px-1 py-1 text-white font-bold  rounded"
+                  "bg-Darkblue hover:bg-Hower px-1 py-1 text-white font-bold  rounded"
                 }
               />
             </div>
@@ -65,15 +65,15 @@ export default function Dashboard() {
           <div className="grid grid-cols-4 gap-5">
             <div>
               <div className="grid grid-rows-2 gap-5">
-                <div className="bg-primary rounded-md">
+                <div className="bg-Lightgray rounded-md">
                   <LpGraf />
                 </div>
-                <div className="bg-primary rounded-md">
+                <div className="bg-Lightgray rounded-md">
                   <FaveChampList />
                 </div>
               </div>
             </div>
-            <div className="bg-primary  col-span-3 rounded-md">
+            <div className="bg-Lightgray  col-span-3 rounded-md">
               <MatchHistoryList
                 matchHistory={matchHistory}
                 summoner={summoner}

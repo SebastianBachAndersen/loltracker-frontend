@@ -1,7 +1,7 @@
 export default function SelectRegion({ value, onChange }) {
   return (
     <select
-      className="bg-primary rounded-lg h-10 text-xl ml-0.5"
+      className="bg-Lightgray rounded-lg h-10 text-xl ml-0.5"
       name="serve"
       id="serve"
       value={value}
