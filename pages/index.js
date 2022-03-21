@@ -12,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="m-auto ">
-        <UserSearch selectRegion={"ml-80"} searchButtonOuter={"mt-0.5"} inputInder={"bg-Lightgray rounded-lg w-96 h-10 text-xl text-slate-50 p-4"} searchButtonInder={"bg-Darkblue hover:bg-Hower px-1 py-1 text-white font-bold  rounded"} />
+        <UserSearch selectRegion={"ml-80"} searchButtonOuter={"mt-0.5"} inputInder={"bg-Darkgray rounded-lg w-96 h-10 text-xl text-slate-50 p-4"} searchButtonInder={"bg-Darkblue hover:bg-Hower px-1 py-1 text-white font-bold  rounded"} />
       </div>
     </div>
   );

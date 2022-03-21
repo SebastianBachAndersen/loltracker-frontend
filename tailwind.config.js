@@ -8,7 +8,12 @@ module.exports = {
       colors: {
         Darkblue: "#327D9A",
         Lightblue: "#5396B0",
-        Lightgray: "#4B4D57",
+        Darkgray: "#4B4D57",
+        Lightgray: "#858585",
+        BlueGray: "#718F9B",
+        RedGray: "#9B7171",
+        Lightred: "Darkgray",
+        Darkred: "#7A5757",
         Hower: "#0A8EC1",
         primary: {
           DEFAULT: "#050609",
