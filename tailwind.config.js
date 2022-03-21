@@ -13,7 +13,9 @@ module.exports = {
           DEFAULT: "#373C3D"
         }
       },
-    
+      transitionProperty: {
+        width: "width"
+      }
     }
   },
   plugins: []
