@@ -6,11 +6,11 @@ import Stats from "../assets/images/icons/stats";
 
 export default function Sidebar({ children }) {
   return (
-    <div className="w-40 min-h-screen shadow-md px-1 fixed bg-primary">
+    <div className="w-40 min-h-screen shadow-2xl px-1 fixed bg-Darkblue">
       <ul className="relative">
         <li className="relative py-4">
           <Link href="/">
-            <a className="flex items-center text-sm py-4 px-6 h-16 overflow-hidden text-gray-50 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-500 transition duration-300 ease-in-out text-center">
+            <a className="flex items-center text-sm py-4 px-6 h-16 overflow-hidden text-gray-50 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-Hower transition duration-300 ease-in-out text-center">
               <div className="ml-4">
                 <HomeIcon width={60} height={100} />
               </div>
@@ -19,7 +19,7 @@ export default function Sidebar({ children }) {
         </li>
         <li className="relative py-4">
           <Link href="#">
-            <a className="flex items-center text-sm py-4 px-6 h-16 overflow-hidden text-gray-50 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-500 transition duration-300 ease-in-out text-center">
+            <a className="flex items-center text-sm py-4 px-6 h-16 overflow-hidden text-gray-50 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-Hower transition duration-300 ease-in-out text-center">
               <Stats height={60} width={100} />
             </a>
           </Link>

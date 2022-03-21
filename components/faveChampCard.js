@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function FaveCampCard({ className }) {
   return (
-    <div className="bg-secondary grid grid-cols-4 w-full text-sm rounded-md">
+    <div className="bg-Lightgray grid grid-cols-4 w-full text-sm rounded-md">
       <div className=" p-1 flex w-full ">
         <Image
           className="rounded-full mx-auto border-solid border-2 border-white"

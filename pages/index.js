@@ -17,10 +17,10 @@ export default function Home() {
           selectRegion={""}
           searchButtonOuter={"mt-0.5"}
           inputInder={
-            "bg-primary rounded-lg w-96 h-10 text-xl text-slate-50 p-4"
+            "bg-Darkgray rounded-lg w-96 h-10 text-xl text-slate-50 p-4"
           }
           searchButtonInder={
-            "bg-blue-500 hover:bg-blue-700 px-1 py-1 text-white font-bold  rounded"
+            "bg-Darkblue hover:bg-Hower px-1 py-1 text-white font-bold  rounded"
           }
         />
       </div>

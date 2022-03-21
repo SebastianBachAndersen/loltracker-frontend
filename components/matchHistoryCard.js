@@ -41,8 +41,8 @@ export default function MatchHistoryCard({
     <div className="p-4 pt-4">
       <Disclosure>
         <div
-          className={`bg-secondary rounded-md border-solid border-2 ${
-            currentUserObj?.win ?? false ? "border-green-600" : "border-red-600"
+          className={`rounded-md border-solid border-2 ${
+            currentUserObj?.win ?? false ? "bg-BlueGray" : "bg-RedGray"
           }`}
         >
           <div className=" border-indigo-600 grid grid-cols-[min-content_min-content_110px_1fr_1fr_min-content] gap-5 text-xs items-center text-center lg:px-5">
@@ -92,8 +92,9 @@ export default function MatchHistoryCard({
               <div
                 className={`${
                   currentUserObj?.win ?? false
-                    ? "text-green-600"
-                    : "text-red-600"
+                    ? "text-green-50"
+                    : "text-red-50"
+
                 }`}
               >
                 <p>{currentUserObj?.win ?? false ? "Win" : "Lose"}</p>
@@ -157,7 +158,9 @@ export default function MatchHistoryCard({
           </div>
         </div>
         <div className="px-2 ">
-          <Disclosure.Panel className=" pt-1 bg-secondary">
+          <Disclosure.Panel className={`pt-1 ${
+            currentUserObj?.win ?? false ? "bg-BlueGray" : "bg-RedGray"
+          }`}>
             <div className="">
               <GameDetails
                 topDmg={topDmg}

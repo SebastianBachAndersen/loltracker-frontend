@@ -47,10 +47,11 @@ function Dashboard({ data }) {
           <div className="col-span-2 ">
             <UserSearch
               selectRegion={""}
-              inputInder={"bg-primary rounded-lg h-10 text-xl p-4"}
+              inputInder={"bg-Darkgray rounded-lg h-10 text-xl p-4"}
+
               searchButtonOuter={" "}
               searchButtonInder={
-                "bg-blue-500 hover:bg-blue-700 px-1 py-1 text-white font-bold  rounded"
+                "bg-Darkblue hover:bg-Hower px-1 py-1 text-white font-bold  rounded"
               }
               className={"flex flex-row justify-end"}
             />
@@ -61,15 +62,16 @@ function Dashboard({ data }) {
       <div className="grid grid-cols-1 lg:grid-cols-4 px-4 gap-5">
         <div>
           <div className="grid grid-rows-2 gap-5">
-            <div className="bg-primary rounded-md">
+            <div className="bg-Darkgray rounded-md">
               <LpGraf />
             </div>
-            <div className="bg-primary rounded-md">
+            <div className="bg-Darkgray rounded-md">
+
               <FaveChampList />
             </div>
           </div>
         </div>
-        <div className="bg-primary lg:col-span-3 rounded-md">
+        <div className="bg-Darkgray lg:col-span-3 rounded-md">
           <MatchHistoryList
             matchHistory={data.matchHistory}
             summoner={data.summoner}
