@@ -161,7 +161,6 @@ export default function MatchHistoryCard({
           <Disclosure.Panel className={`pt-1 ${
             currentUserObj?.win ?? false ? "bg-BlueGray" : "bg-RedGray"
           }`}>
-          <Disclosure.Panel className=" pt-1 bg-secondary">
             <div className="">
               <GameDetails
                 topDmg={topDmg}
