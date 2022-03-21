@@ -33,7 +33,7 @@ export default function GameDetails({ match, server, topDmg }) {
           <div key={i}>
             <div
               className={`${
-                player?.win ?? false ? "bg-[#16a34a]" : "bg-[#dc2626]"
+                player?.win ?? false ? "bg-Darkblue" : "bg-Lightred"
               } grid grid-cols-[0.6fr_1fr_1fr_110px] text-xs items-center rounded-md text-center lg:px-5`}
             >
               <div>

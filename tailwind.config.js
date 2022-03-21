@@ -12,7 +12,7 @@ module.exports = {
         Lightgray: "#858585",
         BlueGray: "#718F9B",
         RedGray: "#9B7171",
-        Lightred: "Darkgray",
+        Lightred: "#AB4D4D",
         Darkred: "#7A5757",
         Hower: "#0A8EC1",
         primary: {
