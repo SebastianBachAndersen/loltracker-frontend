@@ -34,50 +34,47 @@ export async function getServerSideProps(context) {
 function Dashboard({ data }) {
   console.log(data);
   return (
-    <div>
+    <div className="p-4">
       <Meta
         title={`${data.summoner.name} - Lol Tracker - Ranked`}
         desc={`${data.summoner.name}`}
         image={`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${data.summoner.profileIconId}.jpg`}
       />
-      <p className="text-red-600"></p>
-      <div className="container mx-auto">
-        <div className="grid grid-cols-2 p-5">
-          <div>
-            <h1 className="text-xl">{data.summoner.name}</h1>
-          </div>
-          <div>
+
+      <div className="container px-4 mx-auto ">
+        <div className="grid grid-cols-1 py-4 lg:grid-cols-3">
+          <h1 className="text-xl">{data.summoner?.name ?? ""}</h1>
+          <div className="col-span-2 ">
             <UserSearch
-              selectRegion={"ml-44"}
-              inputInder={
-                "bg-primary rounded-lg w-96 h-10 text-xl text-slate-50 p-4"
-              }
-              searchButtonOuter={"ml-32 mt-0.5"}
+              selectRegion={""}
+              inputInder={"bg-primary rounded-lg h-10 text-xl p-4"}
+              searchButtonOuter={" "}
               searchButtonInder={
                 "bg-blue-500 hover:bg-blue-700 px-1 py-1 text-white font-bold  rounded"
               }
+              className={"flex flex-row justify-end"}
             />
           </div>
         </div>
+      </div>
 
-        <div className="grid grid-cols-4 gap-5">
-          <div>
-            <div className="grid grid-rows-2 gap-5">
-              <div className="bg-primary rounded-md">
-                <LpGraf />
-              </div>
-              <div className="bg-primary rounded-md">
-                <FaveChampList />
-              </div>
+      <div className="grid grid-cols-1 lg:grid-cols-4 px-4 gap-5">
+        <div>
+          <div className="grid grid-rows-2 gap-5">
+            <div className="bg-primary rounded-md">
+              <LpGraf />
+            </div>
+            <div className="bg-primary rounded-md">
+              <FaveChampList />
             </div>
           </div>
-          <div className="bg-primary  col-span-3 rounded-md">
-            <MatchHistoryList
-              matchHistory={data.matchHistory}
-              summoner={data.summoner}
-              server={data.server}
-            />
-          </div>
+        </div>
+        <div className="bg-primary lg:col-span-3 rounded-md">
+          <MatchHistoryList
+            matchHistory={data.matchHistory}
+            summoner={data.summoner}
+            server={data.server}
+          />
         </div>
       </div>
     </div>
