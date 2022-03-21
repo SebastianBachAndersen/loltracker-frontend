@@ -6,7 +6,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <div className="bg-Lightblue min-h-screen text-white flex flex-row">
       <ProgressBar />
-      <div className="shrink ">
+      <div className="shrink">
+        <div className="w-40 shrink"></div>
         <Sidebar />
       </div>
       <div className="grow w-full">
