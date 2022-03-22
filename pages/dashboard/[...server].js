@@ -32,24 +32,23 @@ export async function getServerSideProps(context) {
 }
 
 function Dashboard({ data }) {
-  console.log(data);
   return (
-    <div className="p-4">
+    <div className="md:p-4">
       <Meta
         title={`${data.summoner.name} - Lol Tracker - Ranked`}
         desc={`${data.summoner.name}`}
         image={`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${data.summoner.profileIconId}.jpg`}
       />
 
-      <div className="pb-2 px-8">
-        <div className="flex flex-row justify-center">
-          <div className="flex-auto"><h1 className="text-4xl font-bold">{data.summoner?.name ?? ""}</h1></div>
-          <div className="flex-auto"></div>
-          <div className="flex-auto">
+      <div className="container px-1 md:px-4 mx-auto ">
+        <div className="grid grid-cols-1 py-4 lg:grid-cols-3">
+          <h1 className=" text-sm lg:text-4xl font-bold">
+            {data.summoner?.name ?? ""}
+          </h1>
+          <div className="col-span-2 ">
             <UserSearch
               selectRegion={""}
               inputInder={"bg-Darkgray rounded-lg h-10 text-xl p-4"}
-
               searchButtonOuter={" "}
               searchButtonInder={
                 "bg-Darkblue hover:bg-Hower px-1 py-1 text-white font-bold  rounded"
@@ -60,14 +59,13 @@ function Dashboard({ data }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-4 px-4 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-4 px-1 md:px-4 gap-5">
         <div>
           <div className="grid grid-rows-2 gap-5">
             <div className="bg-Darkgray rounded-md">
               <LpGraf />
             </div>
             <div className="bg-Darkgray rounded-md">
-
               <FaveChampList />
             </div>
           </div>
