@@ -38,17 +38,17 @@ export default function MatchHistoryCard({
   );
 
   return (
-    <div className="p-4 pt-4">
+    <div className="md:p-4 pt-4">
       <Disclosure>
         <div
           className={`rounded-md ${
             currentUserObj?.win ?? false ? "bg-BlueGray" : "bg-RedGray"
           }`}
         >
-          <div className=" border-indigo-600 grid grid-cols-[min-content_min-content_110px_1fr_1fr_min-content] gap-5 text-xs items-center text-center lg:px-5">
+          <div className=" border-indigo-600 grid grid-cols-[min-content_minmax(90px,1fr)_minmax(40px,1fr)_minmax(40px,1fr)_min-content] md:grid-cols-[min-content_min-content_minmax(40px,1fr)_minmax(40px,1fr)_1fr_1fr_min-content] md:gap-5 text-xs items-center text-center lg:px-5">
             <div>
               <div className="p-1 flex gap-2">
-                <div className="h-[100px] w-[100px]">
+                <div className="h-[60px] w-[60px] md:h-[100px] md:w-[100px]">
                   <Image
                     className="rounded-full mx-auto border-solid border-2 border-white"
                     width={100}
@@ -81,21 +81,23 @@ export default function MatchHistoryCard({
                 </div>
               </div>
             </div>
-            <div>
+            <div className="hidden md:block">
               <Items className="grid grid-cols-4 w-36" items={items} />
             </div>
-            <div className="grid grid-rows-2 justify-center gap-5  ">
+            <div className="grid grid-rows-2 justify-center gap-5 2xl:text-base ">
               <div>
-                <p className="text-base">{match.details.info.gameType}</p>
-                <p className="text-base">{moment(match.match_created_at).fromNow()}</p>
+                <p className="">{match.details.info.gameType}</p>
+                <p className="">{moment(match.match_created_at).fromNow()}</p>
               </div>
               <div
                 className={`${
                   currentUserObj?.win ?? false ? "text-green-50" : "text-red-50"
                 }`}
               >
-                <p className="text-base">{currentUserObj?.win ?? false ? "Win" : "Lose"}</p>
-                <p className="text-base">
+                <p className="">
+                  {currentUserObj?.win ?? false ? "Win" : "Lose"}
+                </p>
+                <p className="">
                   {moment
                     .utc(match.details.info.gameDuration * 1000)
                     .format("mm:ss")}
@@ -103,23 +105,21 @@ export default function MatchHistoryCard({
               </div>
             </div>
 
-            <div className="grid grid-cols-2">
-              <div className="grid grid-rows-2 justify-center gap-5 text-base">
-                <div>{currentUserObj.championName}</div>
-                <div>Cs: {currentUserObj.totalMinionsKilled}</div>
+            <div className="grid grid-rows-2 justify-center gap-5 text-base">
+              <div>{currentUserObj.championName}</div>
+              <div>Cs: {currentUserObj.totalMinionsKilled}</div>
+            </div>
+            <div className="grid grid-rows-2 justify-center gap-5 text-base">
+              <div>
+                KDA: {Number(currentUserObj.challenges?.kda.toFixed(2))}
               </div>
-              <div className="grid grid-rows-2 justify-center gap-5 text-base">
-                <div>
-                  KDA: {Number(currentUserObj.challenges?.kda.toFixed(2))}
-                </div>
-                <div>
-                  {currentUserObj.kills} / {currentUserObj.deaths} /
-                  {currentUserObj.assists}
-                </div>
+              <div>
+                {currentUserObj.kills} / {currentUserObj.deaths} /
+                {currentUserObj.assists}
               </div>
             </div>
             <div className="hidden xl:block">
-              <div className="grid grid-rows-5 grid-flow-col">
+              <div className="  grid grid-rows-5 grid-flow-col">
                 {match.details.info.participants.map(function (player, i) {
                   return (
                     <div key={i} className="cursor-pointer">
@@ -127,18 +127,20 @@ export default function MatchHistoryCard({
                         href={`/dashboard/${server}/${player.summonerName}`}
                         passHref
                       >
-                        <div className="flex gap-2 text-left p-1">
-                          <div>
+                        <div className="flex gap-2 text-left min-w-full">
+                          <div className="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]">
                             <Image
                               className=" mx-auto border-solid border-2 border-white"
-                              width={20}
-                              height={20}
+                              width={30}
+                              height={30}
                               src={`http://ddragon.leagueoflegends.com/cdn/12.5.1/img/champion/${player.championName}.png`}
                               alt="placeholder"
                             />
                           </div>
                           <div>
-                            <p>{player.summonerName}</p>
+                            <p className="">
+                              {truncateString(player.summonerName, 12)}
+                            </p>
                           </div>
                         </div>
                       </Link>
@@ -181,4 +183,11 @@ export default function MatchHistoryCard({
       </Disclosure>
     </div>
   );
+}
+function truncateString(str, num) {
+  if (str.length > num) {
+    return str.slice(0, num) + "...";
+  } else {
+    return str;
+  }
 }

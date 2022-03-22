@@ -8,9 +8,9 @@ export default function Items({ className, items }) {
         return (
           <div key={i}>
             {item == 0 ? (
-              <div className="w-8 h-8"></div>
+              <div className="w-[10px] h-[10px] md:w-[20px] md:h-[20px]"></div>
             ) : (
-              <div>
+              <div className="min-w-[10px] min-h-[10px] md:min-w-[20px] md:min-h-[20px]">
                 <Image
                   className=" mx-auto border-solid border-2 border-white"
                   width={32}

@@ -7,13 +7,13 @@ function MyApp({ Component, pageProps }) {
     <div className="bg-Lightblue min-h-screen text-white flex flex-row">
       <ProgressBar />
       <div className="shrink">
-        <div className="w-40 shrink"></div>
+        <div className="w-10 md:w-40 shrink"></div>
         <Sidebar />
       </div>
       <div className="grow w-full">
         <Component {...pageProps} />
       </div>
-      <div className="w-40 shrink shadow-2xl bg-Darkblue"></div>
+      <div className=" 2xl:w-40 shrink shadow-2xl bg-Darkblue"></div>
     </div>
   );
 }
