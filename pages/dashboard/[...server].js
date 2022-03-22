@@ -41,10 +41,11 @@ function Dashboard({ data }) {
         image={`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${data.summoner.profileIconId}.jpg`}
       />
 
-      <div className="container px-4 mx-auto ">
-        <div className="grid grid-cols-1 py-4 lg:grid-cols-3">
-          <h1 className="text-xl">{data.summoner?.name ?? ""}</h1>
-          <div className="col-span-2 ">
+      <div className="pb-2 px-8">
+        <div className="flex flex-row justify-center">
+          <div className="flex-auto"><h1 className="text-4xl font-bold">{data.summoner?.name ?? ""}</h1></div>
+          <div className="flex-auto"></div>
+          <div className="flex-auto">
             <UserSearch
               selectRegion={""}
               inputInder={"bg-Darkgray rounded-lg h-10 text-xl p-4"}

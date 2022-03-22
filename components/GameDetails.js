@@ -7,7 +7,7 @@ import Items from "./Items";
 
 export default function GameDetails({ match, server, topDmg, summonerId }) {
   const getBackgroundCOlor = (player) => {
-    if (player.puuid === summonerId) return "bg-green-600";
+    if (player.puuid === summonerId) return "bg-Darkpupple";
 
     return player?.win ?? false ? "bg-Darkblue" : "bg-Lightred";
   };
@@ -90,17 +90,17 @@ export default function GameDetails({ match, server, topDmg, summonerId }) {
               <div className="grid grid-cols-2">
                 <div className="grid grid-rows-2 justify-center gap-5">
                   <div>{player.championName}</div>
-                  <div>Cs {player.totalMinionsKilled}</div>
+                  <div>Cs: {player.totalMinionsKilled}</div>
                 </div>
                 <div className="grid grid-rows-2 justify-center gap-5">
-                  <div>kda {Number(player.challenges?.kda.toFixed(2))}</div>
+                  <div>KDA: {Number(player.challenges?.kda.toFixed(2))}</div>
                   <div>
                     {player.kills} / {player.deaths} /{player.assists}
                   </div>
                 </div>
               </div>
               <div>
-                <Items className="flex flex-row" items={items} />
+                <Items className="flex flex-row justify-center" items={items} />
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
                 <div

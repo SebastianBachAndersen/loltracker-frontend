@@ -15,10 +15,10 @@ export default function FaveCampCard({ className }) {
       </div>
       <div className="grid grid-rows-2">
         <div className ="pt-2">-jhin-</div>
-        <div>Cs 234</div>
+        <div>Cs: 234</div>
       </div>
       <div className="grid grid-rows-2">
-        <div className ="pt-2">kda 23.1</div>
+        <div className ="pt-2">KDA: 23.1</div>
         <div>2/3/4</div>
       </div>
       <div className="grid grid-rows-2">
