@@ -41,7 +41,7 @@ export default function MatchHistoryCard({
     <div className="p-4 pt-4">
       <Disclosure>
         <div
-          className={`rounded-md border-solid border-2 ${
+          className={`rounded-md ${
             currentUserObj?.win ?? false ? "bg-BlueGray" : "bg-RedGray"
           }`}
         >
@@ -86,19 +86,16 @@ export default function MatchHistoryCard({
             </div>
             <div className="grid grid-rows-2 justify-center gap-5  ">
               <div>
-                <p>{match.details.info.gameType}</p>
-                <p>{moment(match.match_created_at).fromNow()}</p>
+                <p className="text-base">{match.details.info.gameType}</p>
+                <p className="text-base">{moment(match.match_created_at).fromNow()}</p>
               </div>
               <div
                 className={`${
-                  currentUserObj?.win ?? false
-                    ? "text-green-50"
-                    : "text-red-50"
-
+                  currentUserObj?.win ?? false ? "text-green-50" : "text-red-50"
                 }`}
               >
-                <p>{currentUserObj?.win ?? false ? "Win" : "Lose"}</p>
-                <p>
+                <p className="text-base">{currentUserObj?.win ?? false ? "Win" : "Lose"}</p>
+                <p className="text-base">
                   {moment
                     .utc(match.details.info.gameDuration * 1000)
                     .format("mm:ss")}
@@ -107,13 +104,13 @@ export default function MatchHistoryCard({
             </div>
 
             <div className="grid grid-cols-2">
-              <div className="grid grid-rows-2 justify-center gap-5">
+              <div className="grid grid-rows-2 justify-center gap-5 text-base">
                 <div>{currentUserObj.championName}</div>
-                <div>Cs {currentUserObj.totalMinionsKilled}</div>
+                <div>Cs: {currentUserObj.totalMinionsKilled}</div>
               </div>
-              <div className="grid grid-rows-2 justify-center gap-5">
+              <div className="grid grid-rows-2 justify-center gap-5 text-base">
                 <div>
-                  kda {Number(currentUserObj.challenges?.kda.toFixed(2))}
+                  KDA: {Number(currentUserObj.challenges?.kda.toFixed(2))}
                 </div>
                 <div>
                   {currentUserObj.kills} / {currentUserObj.deaths} /
@@ -130,7 +127,7 @@ export default function MatchHistoryCard({
                         href={`/dashboard/${server}/${player.summonerName}`}
                         passHref
                       >
-                        <div className="flex gap-2 text-left">
+                        <div className="flex gap-2 text-left p-1">
                           <div>
                             <Image
                               className=" mx-auto border-solid border-2 border-white"
@@ -158,14 +155,17 @@ export default function MatchHistoryCard({
           </div>
         </div>
         <div className="px-2 ">
-          <Disclosure.Panel className={`pt-1 ${
-            currentUserObj?.win ?? false ? "bg-BlueGray" : "bg-RedGray"
-          }`}>
+          <Disclosure.Panel
+            className={`pt-1 ${
+              currentUserObj?.win ?? false ? "bg-BlueGray" : "bg-RedGray"
+            }`}
+          >
             <div className="">
               <GameDetails
                 topDmg={topDmg}
                 match={team1}
                 server={server}
+                summonerId={summoner.puuid}
               ></GameDetails>
             </div>
             <div>
@@ -173,6 +173,7 @@ export default function MatchHistoryCard({
                 topDmg={topDmg}
                 match={team2}
                 server={server}
+                summonerId={summoner.puuid}
               ></GameDetails>
             </div>
           </Disclosure.Panel>

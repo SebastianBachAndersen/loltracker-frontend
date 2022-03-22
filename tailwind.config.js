@@ -9,6 +9,8 @@ module.exports = {
         Darkblue: "#327D9A",
         Lightblue: "#5396B0",
         Darkgray: "#4B4D57",
+        pupple: "#8A719B",
+        Darkpupple: "#824DAB", 
         Lightgray: "#858585",
         BlueGray: "#718F9B",
         RedGray: "#9B7171",
