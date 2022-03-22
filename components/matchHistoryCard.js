@@ -91,10 +91,7 @@ export default function MatchHistoryCard({
               </div>
               <div
                 className={`${
-                  currentUserObj?.win ?? false
-                    ? "text-green-50"
-                    : "text-red-50"
-
+                  currentUserObj?.win ?? false ? "text-green-50" : "text-red-50"
                 }`}
               >
                 <p>{currentUserObj?.win ?? false ? "Win" : "Lose"}</p>
@@ -158,14 +155,17 @@ export default function MatchHistoryCard({
           </div>
         </div>
         <div className="px-2 ">
-          <Disclosure.Panel className={`pt-1 ${
-            currentUserObj?.win ?? false ? "bg-BlueGray" : "bg-RedGray"
-          }`}>
+          <Disclosure.Panel
+            className={`pt-1 ${
+              currentUserObj?.win ?? false ? "bg-BlueGray" : "bg-RedGray"
+            }`}
+          >
             <div className="">
               <GameDetails
                 topDmg={topDmg}
                 match={team1}
                 server={server}
+                summonerId={summoner.puuid}
               ></GameDetails>
             </div>
             <div>
@@ -173,6 +173,7 @@ export default function MatchHistoryCard({
                 topDmg={topDmg}
                 match={team2}
                 server={server}
+                summonerId={summoner.puuid}
               ></GameDetails>
             </div>
           </Disclosure.Panel>
