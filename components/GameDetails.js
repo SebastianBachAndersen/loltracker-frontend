@@ -5,7 +5,13 @@ import React from "react";
 import summonerSpells from "../assets/staticData/summonerSpells.json";
 import Items from "./Items";
 
-export default function GameDetails({ match, server, topDmg }) {
+export default function GameDetails({ match, server, topDmg, summonerId }) {
+  const getBackgroundCOlor = (player) => {
+    if (player.puuid === summonerId) return "bg-green-600";
+
+    return player?.win ?? false ? "bg-Darkblue" : "bg-Lightred";
+  };
+
   return (
     <div className="p-4  grid  gap-2">
       <div
@@ -32,9 +38,9 @@ export default function GameDetails({ match, server, topDmg }) {
         return (
           <div key={i}>
             <div
-              className={`${
-                player?.win ?? false ? "bg-Darkblue" : "bg-Lightred"
-              } grid grid-cols-[0.6fr_1fr_1fr_110px] text-xs items-center rounded-md text-center lg:px-5`}
+              className={`${getBackgroundCOlor(
+                player
+              )} grid grid-cols-[0.6fr_1fr_1fr_110px] text-xs items-center rounded-md text-center lg:px-5`}
             >
               <div>
                 <div className="p-1 flex flex-row gap-2">
