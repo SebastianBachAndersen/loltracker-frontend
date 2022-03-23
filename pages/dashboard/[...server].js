@@ -63,7 +63,7 @@ function Dashboard({ data }) {
         <div>
           <div className="grid grid-rows-2 gap-5">
             <div className="bg-Darkgray rounded-md">
-              <LpGraf />
+              <LpGraf Data={data.lpGrafData.data}/>
             </div>
             <div className="bg-Darkgray rounded-md">
               <FaveChampList />
