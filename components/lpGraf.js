@@ -12,7 +12,7 @@ import moment from "moment";
 
 export default function LpGraf({ Data }) {
   const rank = [];
-  Data.map((x) => {
+  Data?.map((x) => {
     console.log(moment.utc(x.data).format("ll"));
     let lOl_rank = {
       date: moment.utc(x.data).format("ll"),
