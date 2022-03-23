@@ -10,7 +10,7 @@ export default function FaveCampCard({ className, champData }) {
           className="rounded-full mx-auto border-solid border-2 border-white"
           width={60}
           height={60}
-          src={`http://ddragon.leagueoflegends.com/cdn/12.5.1/img/champion/${champData.championName}.png`}
+          src={`http://ddragon.leagueoflegends.com/cdn/12.5.1/img/champion/${champData.championNameId}.png`}
           alt="placeholder"
         />
       </div>
