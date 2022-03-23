@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
-export default function FaveCampCard({ className }) {
+export default function FaveCampCard({ className, champData }) {
+  console.log(champData);
   return (
     <div className="bg-pupple grid grid-cols-4 w-full text-sm rounded-md">
       <div className=" p-1 flex w-full ">
@@ -9,21 +10,26 @@ export default function FaveCampCard({ className }) {
           className="rounded-full mx-auto border-solid border-2 border-white"
           width={60}
           height={60}
-          src="http://ddragon.leagueoflegends.com/cdn/12.5.1/img/champion/Jhin.png"
+          src={`http://ddragon.leagueoflegends.com/cdn/12.5.1/img/champion/${champData.championName}.png`}
           alt="placeholder"
         />
       </div>
       <div className="grid grid-rows-2">
-        <div className ="pt-2">-jhin-</div>
-        <div>Cs: 234</div>
+        <div className="pt-2">{champData.championName}</div>
+        <div>Cs: {champData.average.cs}</div>
       </div>
       <div className="grid grid-rows-2">
-        <div className ="pt-2">KDA: 23.1</div>
-        <div>2/3/4</div>
+        <div className="pt-2">KDA: {champData.kda}</div>
+        <div>
+          {champData.average.kills}/{champData.average.deaths}/
+          {champData.average.assits}
+        </div>
       </div>
       <div className="grid grid-rows-2">
-        <div className ="pt-2" >50%</div>
-        <div>12W/12L</div>
+        <div className="pt-2">{champData.winRate}%</div>
+        <div>
+          {champData.wins}W/{champData.losses}L
+        </div>
       </div>
     </div>
   );

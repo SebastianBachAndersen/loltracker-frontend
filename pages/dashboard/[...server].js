@@ -28,9 +28,9 @@ export async function getServerSideProps(context) {
       }
     };
   }
+
   return { props: { data } };
 }
-
 function Dashboard({ data }) {
   return (
     <div className="md:p-4">
@@ -59,14 +59,14 @@ function Dashboard({ data }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-4 px-1 md:px-4 gap-5">
+      <div className="grid  grid-cols-1 lg:grid-cols-4 px-1 md:px-4 gap-5">
         <div>
-          <div className="grid grid-rows-2 gap-5">
-            <div className="bg-Darkgray rounded-md">
+          <div className="grid grid-rows-[min-content_1fr] gap-5">
+            <div className="bg-Darkgray  rounded-md">
               <LpGraf />
             </div>
             <div className="bg-Darkgray rounded-md">
-              <FaveChampList />
+              <FaveChampList championStats={data.championStats} />
             </div>
           </div>
         </div>
