@@ -13,27 +13,27 @@ import {
 import moment from "moment";
 
 const tierList = [
-  { rank: "iron", league_points: 0, color: "#4d504b" },
-  { rank: "bronze", league_points: 400, color: "#9c5221" },
-  { rank: "silver", league_points: 800, color: "#c2bdb0" },
-  { rank: "gold", league_points: 1200, color: "#cccc33" },
-  { rank: "platinum", league_points: 1600, color: "#b8b7b2" },
-  { rank: "diamond", league_points: 2000, color: "#AED6F1" },
-  { rank: "master", league_points: 2400, color: "#C39BD3" },
-  { rank: "grandMaster", league_points: 2800, color: "#C70039" },
-  { rank: "challenger", league_points: 3200, color: "#2471A3" }
+  { rank: "Iron", league_points: 0, color: "#4d504b" },
+  { rank: "Bronze", league_points: 400, color: "#9c5221" },
+  { rank: "Silver", league_points: 800, color: "#c2bdb0" },
+  { rank: "Gold", league_points: 1200, color: "#cccc33" },
+  { rank: "Platinum", league_points: 1600, color: "#b8b7b2" },
+  { rank: "Diamond", league_points: 2000, color: "#AED6F1" },
+  { rank: "Master", league_points: 2400, color: "#C39BD3" },
+  { rank: "GrandMaster", league_points: 2800, color: "#C70039" },
+  { rank: "Challenger", league_points: 3200, color: "#2471A3" }
 ];
 
 const colorKey = {
-  iron: "#4d504b", // dark green
-  bronze: "#9c5221", // dark orange
-  silver: "#c2bdb0", // light yellow
-  gold: "#cccc33", // yellow-green
-  platinum: "#14903F", // dark green-cyan
-  diamond: "#AED6F1", // light cyan-blue
-  master: "#C39BD3", // magenta
-  grandMaster: "#C70039", //dark pink
-  challenger: "#2471A3" //dark cyan-blue
+  Iron: "#4d504b", // dark green
+  Bronze: "#9c5221", // dark orange
+  Silver: "#c2bdb0", // light yellow
+  Gold: "#cccc33", // yellow-green
+  Platinum: "#14903F", // dark green-cyan
+  Diamond: "#AED6F1", // light cyan-blue
+  Master: "#C39BD3", // magenta
+  GrandMaster: "#C70039", //dark pink
+  Challenger: "#2471A3" //dark cyan-blue
 };
 
 export default function LpGraf({ Data }) {
@@ -78,7 +78,6 @@ export default function LpGraf({ Data }) {
     };
     rank.push(lOl_rank);
   });
-  console.log(rank);
 
   function between(x, min, max) {
     return x >= min && x <= max;
@@ -103,7 +102,6 @@ export default function LpGraf({ Data }) {
       length++;
     });
     const getStops = (ranks) => {
-      console.log(ranks);
       var prevcolor = "none";
       var gratdiants = [];
       var passedPercent = 0;
@@ -136,9 +134,29 @@ export default function LpGraf({ Data }) {
     );
   };
 
+  const getCurrentRank = () => {
+    const curRank = rank[rank.length - 1];
+    var league = tierList.find((tier) =>
+      between(
+        curRank.league_points,
+        tier.league_points,
+        tier.league_points + 399
+      )
+    );
+
+    const pos = curRank.league_points - league.league_points;
+    const ranked = (pos) => {
+      if (pos < 99) return "4";
+      if (pos < 199) return "3";
+      if (pos < 299) return "2";
+      if (pos < 399) return "1";
+    };
+    return `${league.rank} ${ranked(pos)}`;
+  };
+
   return (
     <div className="p-4 ">
-      <h2 className="text-center">-current_rank-</h2>
+      <h2 className="text-center">{getCurrentRank()}</h2>
       <div className="bg-sky-50">
         <ResponsiveContainer width="100%" aspect={3}>
           <AreaChart
