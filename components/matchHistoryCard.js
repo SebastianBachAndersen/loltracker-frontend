@@ -8,6 +8,7 @@ import GameDetails from "./GameDetails";
 import { useState } from "react";
 import Items from "./Items";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import queues from "../assets/staticData/queues.json";
 export default function MatchHistoryCard({
   className,
   match,
@@ -36,7 +37,6 @@ export default function MatchHistoryCard({
       return o.totalDamageDealtToChampions;
     })
   );
-
   return (
     <div className="md:p-4 pt-4">
       <Disclosure>
@@ -45,50 +45,52 @@ export default function MatchHistoryCard({
             currentUserObj?.win ?? false ? "bg-BlueGray" : "bg-RedGray"
           }`}
         >
-          <div className=" border-indigo-600 grid grid-cols-[min-content_minmax(90px,1fr)_minmax(40px,1fr)_minmax(40px,1fr)_min-content] md:grid-cols-[min-content_min-content_minmax(40px,1fr)_minmax(40px,1fr)_1fr_1fr_min-content] md:gap-5 text-xs items-center text-center lg:px-5">
-            <div>
-              <div className="p-1 flex gap-2">
-                <div className="h-[60px] w-[60px] md:h-[100px] md:w-[100px]">
-                  <Image
-                    className="rounded-full mx-auto border-solid border-2 border-white"
-                    width={100}
-                    height={100}
-                    src={`http://ddragon.leagueoflegends.com/cdn/12.5.1/img/champion/${currentUserObj.championName}.png`}
-                    alt="placeholder"
-                  />
-                </div>
-                <div className="grid items-center grid-rows-2">
-                  <Image
-                    className="mx-auto  border-solid border-2 border-white"
-                    width={25}
-                    height={25}
-                    layout="fixed"
-                    src={`http://ddragon.leagueoflegends.com/cdn/12.5.1/img/spell/${
-                      summonerSpells[currentUserObj.summoner1Id].key
-                    }.png`}
-                    alt="placeholder"
-                  />
-                  <Image
-                    className="mx-auto border-solid border-2 border-white"
-                    width={25}
-                    height={25}
-                    layout="fixed"
-                    src={`http://ddragon.leagueoflegends.com/cdn/12.5.1/img/spell/${
-                      summonerSpells[currentUserObj.summoner2Id].key
-                    }.png`}
-                    alt="placeholder"
-                  />
-                </div>
+          <div className=" border-indigo-600 grid grid-cols-[min-content_min-content_minmax(90px,1fr)_minmax(40px,1fr)_minmax(40px,1fr)_min-content] md:grid-cols-[min-content_min-content_min-content_minmax(40px,1fr)_minmax(40px,1fr)_1fr_1fr_min-content] p-1 gap-2 md:gap-2 text-xs items-center text-center lg:px-2">
+            <div className="grid grid-rows-[min-content_1fr] ">
+              <p className="pb-2">{moment(match.match_created_at).fromNow()}</p>
+              <div className="h-[60px] w-[60px] md:h-[100px] md:w-[100px]">
+                <Image
+                  className="rounded-full mx-auto border-solid border-2 border-white"
+                  width={100}
+                  height={100}
+                  src={`http://ddragon.leagueoflegends.com/cdn/12.5.1/img/champion/${currentUserObj.championName}.png`}
+                  alt="placeholder"
+                />
               </div>
+            </div>
+            <div className="grid items-center grid-rows-2">
+              <Image
+                className="mx-auto border-solid border-2 border-white"
+                width={25}
+                height={25}
+                layout="fixed"
+                src={`http://ddragon.leagueoflegends.com/cdn/12.5.1/img/spell/${
+                  summonerSpells[currentUserObj.summoner1Id].key
+                }.png`}
+                alt="placeholder"
+              />
+              <Image
+                className="mx-auto border-solid border-2 border-white"
+                width={25}
+                height={25}
+                layout="fixed"
+                src={`http://ddragon.leagueoflegends.com/cdn/12.5.1/img/spell/${
+                  summonerSpells[currentUserObj.summoner2Id].key
+                }.png`}
+                alt="placeholder"
+              />
             </div>
             <div className="hidden md:block">
               <Items className="grid grid-cols-4 w-36" items={items} />
             </div>
-            <div className="grid grid-rows-2 justify-center gap-5 2xl:text-base ">
-              <div>
-                <p className="">{match.details.info.gameType}</p>
-                <p className="">{moment(match.match_created_at).fromNow()}</p>
-              </div>
+            <div className="grid grid-rows-2 justify-center gap-5 ">
+              <p className="">
+                {
+                  queues.filter((obj) => {
+                    return obj.queueId == match.details.info.queueId;
+                  })[0].description
+                }
+              </p>
               <div
                 className={`${
                   currentUserObj?.win ?? false ? "text-green-50" : "text-red-50"
@@ -105,11 +107,11 @@ export default function MatchHistoryCard({
               </div>
             </div>
 
-            <div className="grid grid-rows-2 justify-center gap-5 text-base">
+            <div className="grid grid-rows-2 justify-center gap-5 ">
               <div>{currentUserObj.championName}</div>
               <div>Cs: {currentUserObj.totalMinionsKilled}</div>
             </div>
-            <div className="grid grid-rows-2 justify-center gap-5 text-base">
+            <div className="grid grid-rows-2 justify-center gap-5 ">
               <div>
                 KDA: {Number(currentUserObj.challenges?.kda.toFixed(2))}
               </div>

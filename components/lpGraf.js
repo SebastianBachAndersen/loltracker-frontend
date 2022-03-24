@@ -136,7 +136,7 @@ export default function LpGraf({ Data }) {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 ">
       <h2 className="text-center">-current_rank-</h2>
       <div className="bg-sky-50">
         <ResponsiveContainer width="100%" aspect={3}>
