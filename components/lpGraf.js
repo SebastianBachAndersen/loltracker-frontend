@@ -156,7 +156,7 @@ export default function LpGraf({ Data }) {
 
   return (
     <div className="p-4 ">
-      <h2 className="text-center">{getCurrentRank()}</h2>
+      <h2 className="text-center pb-2">{getCurrentRank()}</h2>
       <div className="bg-sky-50">
         <ResponsiveContainer width="100%" aspect={3}>
           <AreaChart

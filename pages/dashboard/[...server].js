@@ -4,6 +4,7 @@ import LpGraf from "../../components/lpGraf";
 import FaveChampList from "../../components/faveCampList";
 import MatchHistoryList from "../../components/matchHistroyList";
 import Meta from "../../components/meta";
+import Image from "next/image";
 
 export async function getServerSideProps(context) {
   // Fetch data from external API
@@ -40,12 +41,20 @@ function Dashboard({ data }) {
         image={`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${data.summoner.profileIconId}.jpg`}
       />
 
-      <div className="container px-1 md:px-4 mx-auto ">
+      <div className=" px-1 md:px-4 mx-auto ">
         <div className="grid grid-cols-1 py-4 lg:grid-cols-3">
-          <h1 className=" text-sm lg:text-4xl font-bold">
-            {data.summoner?.name ?? ""}
-          </h1>
-          <div className="col-span-2 ">
+          <div className="flex flex-row space-x-6 items-end">
+            <Image
+              height={128}
+              width={128}
+              alt="Profile image"
+              src={`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${data.summoner.profileIconId}.jpg`}
+            ></Image>
+            <h1 className=" text-sm lg:text-4xl font-bold">
+              {data.summoner?.name ?? ""}
+            </h1>
+          </div>
+          <div className="col-span-2  mr-20">
             <UserSearch
               selectRegion={""}
               inputInder={"bg-Darkgray rounded-lg h-10 text-xl p-4"}

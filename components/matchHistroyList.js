@@ -9,7 +9,7 @@ export default function MatchHistroyList({
 }) {
   return (
     <div className="p-4">
-      <h2 className="text-center">-match histroy list-</h2>
+      <h2 className="text-center text-xl">Match histroy</h2>
       <div>
         {matchHistory.map(function (match, i) {
           return (
