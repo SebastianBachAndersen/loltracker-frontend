@@ -62,7 +62,7 @@ export default function LpGraf({ Data }) {
       date: "Mar 28, 2022",
       league_points: 1524,
       rank: "gold"
-    },
+    }
   ];
   Data?.map((x) => {
     let tier = "iron";
@@ -113,11 +113,6 @@ export default function LpGraf({ Data }) {
         var percent = passedPercent + curPercent;
         passedPercent = curPercent;
         var prevcolor = "true";
-        console.log(percent);
-        console.log(curPercent);
-        console.log(key);
-        console.log(value.length);
-        console.log(colorKey[[key]]);
         curcolor = colorKey[[key]];
         gratdiants.push(
           <>
@@ -131,7 +126,7 @@ export default function LpGraf({ Data }) {
           </>
         );
       }
-      gratdiants.push(<stop offset={`100%`} stopColor={colorKey[[key]]} />);
+      gratdiants.push(<stop offset={`100%`} stopColor={curcolor} />);
       return gratdiants;
     };
     return (
