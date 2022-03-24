@@ -61,9 +61,9 @@ function Dashboard({ data }) {
 
       <div className="grid  grid-cols-1 lg:grid-cols-4 px-1 md:px-4 gap-5">
         <div>
-          <div className="grid grid-rows-[min-content_1fr] gap-5">
-            <div className="bg-Darkgray  rounded-md">
-              <LpGraf />
+          <div className="grid grid-rows-2 gap-5">
+            <div className="bg-Darkgray rounded-md">
+              <LpGraf Data={data.lpGrafData.data}/>
             </div>
             <div className="bg-Darkgray rounded-md">
               <FaveChampList championStats={data.championStats} />
