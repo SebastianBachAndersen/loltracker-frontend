@@ -22,8 +22,35 @@ const tierList = [
   { rank: "challenger", league_points: 3200, color: "#fff" }
 ];
 
+const colorKey = {
+  iron: "4d504b",
+  bronze: "#9c5221",
+  silver: "#c2bdb0",
+  gold: "#cccc33",
+  platinum: "#14903F",
+  diamond: "#cfe4ee",
+  master: "#2272b5",
+  grandMaster: "#8884d8",
+  challenger: "#fff"
+};
+
 export default function LpGraf({ Data }) {
   const rank = [
+    {
+      date: "Mar 15, 2022",
+      league_points: 320,
+      rank: "iron"
+    },
+    {
+      date: "Mar 15, 2022",
+      league_points: 641,
+      rank: "bronze"
+    },
+    {
+      date: "Mar 15, 2022",
+      league_points: 1024,
+      rank: "silver"
+    },
     {
       date: "Mar 15, 2022",
       league_points: 1306,
@@ -52,8 +79,9 @@ export default function LpGraf({ Data }) {
   }
 
   var arr = {};
+  var length = 0;
   const getColor = () => {
-    rank.map((entry) => {
+    rank.map((entry, i) => {
       var league = tierList.find((tier) =>
         between(
           entry.league_points,
@@ -66,17 +94,39 @@ export default function LpGraf({ Data }) {
       } else {
         arr[[league.rank]] = [entry];
       }
+      length++;
     });
-    console.log(arr);
     const getStops = (ranks) => {
-      for (const [key, value] of Object.entries(ranks)) {
-        return (
+      console.log(ranks);
+      var prevcolor = "none";
+      var gratdiants = [];
+      var passedPercent = 0;
+      var curcolor = "";
+      for (let [key, value] of Object.entries(ranks)) {
+        var curPercent = (value.length / length) * 100;
+        var percent = passedPercent + curPercent;
+        passedPercent = curPercent;
+        var prevcolor = "true";
+        console.log(percent);
+        console.log(curPercent);
+        console.log(key);
+        console.log(value.length);
+        console.log(colorKey[[key]]);
+        curcolor = colorKey[[key]];
+        gratdiants.push(
           <>
-            <stop offset="0%" stopColor="blue" />
-            <stop offset={`${percentage}%`} stopColor="#9c5221" />
+            {prevcolor === "true" ? (
+              <stop offset={`${percent}%`} stopColor={colorKey[[key]]} />
+            ) : (
+              ""
+            )}
+            <stop offset="0%" stopColor={colorKey[[key]]} />
+            <stop offset={`${percent}%`} stopColor={colorKey[[key]]} />
           </>
         );
       }
+      gratdiants.push(<stop offset={`100%`} stopColor={colorKey[[key]]} />);
+      return gratdiants;
     };
     return (
       <linearGradient id="gradient" x1="0" y1="0" x2="100%" y2="0">
@@ -87,7 +137,6 @@ export default function LpGraf({ Data }) {
 
   return (
     <div className="p-4">
-      {getColor()}
       <h2 className="text-center">-current_rank-</h2>
       <div className="bg-sky-50">
         <ResponsiveContainer width="100%" aspect={3}>
@@ -102,30 +151,7 @@ export default function LpGraf({ Data }) {
               bottom: 5
             }}
           >
-            <defs>
-              <linearGradient id="gradient" x1="0" y1="0" x2="100%" y2="0">
-                <stop offset="0%" stopColor="red" />
-                <stop offset={`${percentage}%`} stopColor="#9c5221" />
-                <stop offset={`${percentage}%`} stopColor="#c2bdb0" />
-                <stop offset={`${percentage}%`} stopColor="#cccc33" />
-                <stop offset={`${percentage}%`} stopColor="#b8b7b2" />
-                <stop offset={`${percentage}%`} stopColor="#cfe4ee" />
-                <stop offset={`${percentage}%`} stopColor="#2272b5" />
-                <stop offset={`${percentage}%`} stopColor="#8884d8" />
-                <stop offset={`100%`} stopColor="#fff" />
-              </linearGradient>
-              <linearGradient id="number2" x1="0" y1="0" x2="100%" y2="0">
-                <stop offset="0%" stopColor="blue" />
-                <stop offset={`${percentage}%`} stopColor="blue" />
-                <stop offset={`${percentage}%`} stopColor="blue" />
-                <stop offset={`${percentage}%`} stopColor="blue" />
-                <stop offset={`${percentage}%`} stopColor="blue" />
-                <stop offset={`${percentage}%`} stopColor="blue" />
-                <stop offset={`${percentage}%`} stopColor="blue" />
-                <stop offset={`${percentage}%`} stopColor="blue" />
-                <stop offset={`100%`} stopColor="blue" />
-              </linearGradient>
-            </defs>
+            <defs>{getColor()}</defs>
             <CartesianGrid
               horizontal="true"
               vertical=""
@@ -135,7 +161,7 @@ export default function LpGraf({ Data }) {
             <XAxis dataKey={"date"} tick={{ fill: "#000" }} />
             <YAxis
               tick={{ fill: "#000" }}
-              domain={["dataMin", "dataMax + 1"]}
+              domain={["dataMin", "dataMax + 100"]}
             />
             <Tooltip
               contentStyle={{ backgroundColor: "#8884d8", color: "#fff" }}
