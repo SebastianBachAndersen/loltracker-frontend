@@ -1,5 +1,7 @@
 import React from "react";
 import {
+  LineChart,
+  Line,
   AreaChart,
   Area,
   XAxis,
@@ -16,22 +18,22 @@ const tierList = [
   { rank: "silver", league_points: 800, color: "#c2bdb0" },
   { rank: "gold", league_points: 1200, color: "#cccc33" },
   { rank: "platinum", league_points: 1600, color: "#b8b7b2" },
-  { rank: "diamond", league_points: 2000, color: "#cfe4ee" },
-  { rank: "master", league_points: 2400, color: "#2272b5" },
-  { rank: "grandMaster", league_points: 2800, color: "#8884d8" },
-  { rank: "challenger", league_points: 3200, color: "#fff" }
+  { rank: "diamond", league_points: 2000, color: "#AED6F1" },
+  { rank: "master", league_points: 2400, color: "#C39BD3" },
+  { rank: "grandMaster", league_points: 2800, color: "#C70039" },
+  { rank: "challenger", league_points: 3200, color: "#2471A3" }
 ];
 
 const colorKey = {
-  iron: "4d504b",
-  bronze: "#9c5221",
-  silver: "#c2bdb0",
-  gold: "#cccc33",
-  platinum: "#14903F",
-  diamond: "#cfe4ee",
-  master: "#2272b5",
-  grandMaster: "#8884d8",
-  challenger: "#fff"
+  iron: "#4d504b", // dark green
+  bronze: "#9c5221", // dark orange
+  silver: "#c2bdb0", // light yellow
+  gold: "#cccc33", // yellow-green
+  platinum: "#14903F", // dark green-cyan
+  diamond: "#AED6F1", // light cyan-blue
+  master: "#C39BD3", // magenta
+  grandMaster: "#C70039", //dark pink
+  challenger: "#2471A3" //dark cyan-blue
 };
 
 export default function LpGraf({ Data }) {
@@ -42,20 +44,25 @@ export default function LpGraf({ Data }) {
       rank: "iron"
     },
     {
-      date: "Mar 15, 2022",
+      date: "Mar 18, 2022",
       league_points: 641,
       rank: "bronze"
     },
     {
-      date: "Mar 15, 2022",
+      date: "Mar 23, 2022",
       league_points: 1024,
       rank: "silver"
     },
     {
-      date: "Mar 15, 2022",
-      league_points: 1306,
+      date: "Mar 23, 2022",
+      league_points: 1224,
+      rank: "silver"
+    },
+    {
+      date: "Mar 28, 2022",
+      league_points: 1524,
       rank: "gold"
-    }
+    },
   ];
   Data?.map((x) => {
     let tier = "iron";
@@ -72,7 +79,6 @@ export default function LpGraf({ Data }) {
     rank.push(lOl_rank);
   });
   console.log(rank);
-  const percentage = (400 / 3200) * 100;
 
   function between(x, min, max) {
     return x >= min && x <= max;
