@@ -24,9 +24,7 @@ const ProgressBar = () => {
     }
   };
   return (
-    <div
-      className={`absolute top-0 ${calcWidth()} bg-blue-500 h-2   z-40`}
-    ></div>
+    <div className={`fixed  top-0 ${calcWidth()} bg-blue-500 h-2   z-40`}></div>
   );
 };
 
