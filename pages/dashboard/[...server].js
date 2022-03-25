@@ -47,6 +47,7 @@ function Dashboard({ data }) {
             <Image
               height={128}
               width={128}
+              priority={true}
               alt="Profile image"
               src={`https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/${data.summoner.profileIconId}.jpg`}
             ></Image>

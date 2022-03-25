@@ -50,6 +50,7 @@ export default function MatchHistoryCard({
               <p className="pb-2">{moment(match.match_created_at).fromNow()}</p>
               <div className="h-[60px] w-[60px] md:h-[100px] md:w-[100px]">
                 <Image
+                  priority={true}
                   className="rounded-full mx-auto border-solid border-2 border-white"
                   width={100}
                   height={100}
@@ -60,6 +61,7 @@ export default function MatchHistoryCard({
             </div>
             <div className="grid items-center grid-rows-2">
               <Image
+                priority={true}
                 className="mx-auto border-solid border-2 border-white"
                 width={25}
                 height={25}
@@ -70,6 +72,7 @@ export default function MatchHistoryCard({
                 alt="placeholder"
               />
               <Image
+                priority={true}
                 className="mx-auto border-solid border-2 border-white"
                 width={25}
                 height={25}
@@ -125,13 +128,15 @@ export default function MatchHistoryCard({
                 {match.details.info.participants.map(function (player, i) {
                   return (
                     <div key={i} className="cursor-pointer">
-                      <Link
+                      <a
+                        target="_blank"
+                        rel="noreferrer"
                         href={`/dashboard/${server}/${player.summonerName}`}
-                        passHref
                       >
                         <div className="flex gap-2 text-left min-w-full">
                           <div className="w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]">
                             <Image
+                              priority={true}
                               className=" mx-auto border-solid border-2 border-white"
                               width={30}
                               height={30}
@@ -145,7 +150,7 @@ export default function MatchHistoryCard({
                             </p>
                           </div>
                         </div>
-                      </Link>
+                      </a>
                     </div>
                   );
                 })}

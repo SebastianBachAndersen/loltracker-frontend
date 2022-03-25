@@ -7,6 +7,7 @@ export default function FaveCampCard({ className, champData }) {
     <div className="bg-pupple grid grid-cols-4 w-full text-sm rounded-md">
       <div className=" p-1 flex w-full ">
         <Image
+          priority={true}
           className="rounded-full mx-auto border-solid border-2 border-white"
           width={60}
           height={60}
