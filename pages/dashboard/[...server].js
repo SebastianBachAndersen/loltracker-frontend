@@ -29,10 +29,10 @@ export async function getServerSideProps(context) {
       }
     };
   }
-
   return { props: { data } };
 }
 function Dashboard({ data }) {
+  console.log(data);
   return (
     <div className="md:p-4">
       <Meta
